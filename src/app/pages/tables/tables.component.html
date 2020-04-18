@@ -1,5 +1,45 @@
 
 <div class=" content">
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h3 >Lista de cursos</h3>
+        <button (click)="Registrar()" class="btn btn-success" style="margin-left: 500px; margin-bottom: 30px;">Registrar curso</button>
+        <input type="text" placeholder="Search.." name="search" style="margin-left: 200px;">
+
+      </div>
+
+      <div class="card-body">
+        <table class="table table-hover table text-center">
+          <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Horario</th>
+            <th>Total Estudiantes</th>
+            <th>Accciones</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let curso of cursos" class="text-center">
+            <td>{{curso.codigo}}</td>
+            <td>{{curso.nombre}}</td>
+            <td>{{curso.horario}}</td>
+            <td>{{curso.totalestudiantes}}</td>
+            <td>
+              <button class="btn btn-warning">Editar</button>
+              <button class="btn btn-danger" style="margin-left: 20px;">Eliminar</button>
+
+            </td>
+          </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!--
   <div class=" row">
     <div class=" col-md-12">
       <div class=" card">
@@ -133,4 +173,5 @@
       </div>
     </div>
   </div>
+  -->
 </div>

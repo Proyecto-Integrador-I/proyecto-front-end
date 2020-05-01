@@ -1,12 +1,17 @@
 
+
 <div class=" content">
   <div class="container">
     <div class="card">
       <div class="card-header">
         <h3 >Lista de cursos</h3>
-        <button (click)="Registrar()" class="btn btn-success" style="margin-left: 500px; margin-bottom: 30px;">Registrar curso</button>
-        <input type="text" placeholder="Search.." name="search" style="margin-left: 200px;">
-
+        <div class="navbar">
+          <button (click)="Registrar()" class="btn btn-success" style="margin: auto auto auto 400px; ">Registrar curso</button>
+          <form class="form-inline">
+            <input type="search" name="txtBuscar" class="form-control" style="background: white; color: black;">
+            <input type="submit" name="accion" value="Buscar" class="btn btn-primary">
+          </form>
+        </div>
       </div>
 
       <div class="card-body">
@@ -27,18 +32,19 @@
             <td>{{curso.horario}}</td>
             <td>{{curso.totalEstudiantes}}</td>
             <td>
-              <button class="btn btn-warning">Editar</button>
-              <button class="btn btn-danger" style="margin-left: 20px;">Eliminar</button>
 
+              <button class="btn btn-info">Editar</button>
+              <button class="btn btn-danger" style="margin-left: 20px;">Eliminar</button>
+              <button style="margin-left: 20px; border: 0; background: none;"><img src="../../../assets/img/logo_actividades.png" title="Ver actividades asignadas a este curso" style="height:50px;width:50px;"/></button>
+              <button style="margin-left: 20px; border: 0; background: none;"><img src="../../../assets/img/Listado_estudiantes.png" title="Listado de estudiantes a este curso" style="height:50px;width:50px;"/></button>
             </td>
           </tr>
           </tbody>
 
         </table>
-      </div>
+
     </div>
   </div>
-
   <!--
   <div class=" row">
     <div class=" col-md-12">

@@ -14,6 +14,13 @@ export const ROUTES: RouteInfo[] = [
     rtlTitle: "لوحة القيادة",
     icon: "icon-chart-pie-36",
     class: ""
+  },
+  {
+    path: "/actividades",
+    title: "Mis Actividades",
+    rtlTitle: "طباعة",
+    icon: "icon-align-center",
+    class: ""
   }
 ];
 

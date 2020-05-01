@@ -4,4 +4,5 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 
 export const AdminLayoutRoutes: Routes = [
   { path: "cursos", component: TablesComponent },
+  { path: "actividades", component: TypographyComponent }
 ];

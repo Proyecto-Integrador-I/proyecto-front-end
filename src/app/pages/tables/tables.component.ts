@@ -16,4 +16,8 @@ export class TablesComponent implements OnInit {
       this.cursos = data;
     });
   }
+
+  listarActividad(){
+    this.router.navigate(['actividades']);
+  }
 }

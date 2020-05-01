@@ -19,7 +19,14 @@ export const ROUTES: RouteInfo[] = [
     path: "/actividades",
     title: "Mis Actividades",
     rtlTitle: "طباعة",
-    icon: "icon-align-center",
+    icon: "icon-notes",
+    class: ""
+  },
+  {
+    path: "/registrarActividad",
+    title: "Registrar actividad",
+    rtlTitle: "ملف تعريفي للمستخدم",
+    icon: "icon-simple-add",
     class: ""
   }
 ];

@@ -13,6 +13,14 @@ export class ActividadService {
   constructor(private http:HttpClient) { }
 
   getActividades(){
-    return this.http.get<Actividad[]>(this.url)
+    return this.http.get<Actividad[]>(this.url);
+  }
+
+  getActividadId(id:number){
+    return this.http.get<Actividad[]>(this.url + '/' + id);
+  }
+
+  registrarActividad(actividad: Actividad){
+    return this.http.post<Actividad>(this.url, actividad);
   }
 }

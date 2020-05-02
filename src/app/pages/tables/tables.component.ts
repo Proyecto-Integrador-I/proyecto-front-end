@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import {Curso} from "../../model/Curso";
 import {CursoService} from "../../services/curso.service";
 import {Router} from "@angular/router";
+import {Actividad} from "../../model/Actividad";
 
 @Component({
   selector: "app-tables",
@@ -17,7 +18,9 @@ export class TablesComponent implements OnInit {
     });
   }
 
-  listarActividad(){
+  listarActividad(curso:Curso):void{
+    // enviamos el id de la fila seleccionada
+    localStorage.setItem('id', curso.codigo.toString());
     this.router.navigate(['actividades']);
   }
 }

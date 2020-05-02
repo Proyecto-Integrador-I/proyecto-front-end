@@ -7,49 +7,51 @@
       </div>
 
     <div class="card-body">
-      <form action="">
+      <form #formRegistrar="ngForm" (ngSubmit)="onRegistrar(formRegistrar)">
+
+
         <div class="form-group">
           <label for="">Código: </label>
-          <input type="number" class="form-control">
+          <input type="number" class="form-control" [(ngModel)]="actividad.codigo" required>
         </div>
 
         <div class="form-group">
           <label for="">Estado: </label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="actividad.estado" required>
         </div>
 
         <div class="form-group">
           <label for="">Curso: </label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="actividad.curso" required>
         </div>
 
         <div class="form-group">
           <label for="">Docente: </label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="actividad.docente" required>
         </div>
 
         <div class="form-group">
           <label for="">Fecha: </label>
-          <input type="date" class="form-control">
+          <input type="date" class="form-control" [(ngModel)]="actividad.fecha" required>
         </div>
 
         <div class="form-group">
           <label for="">Duración: </label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="actividad.duracion" required>
         </div>
 
         <div class="form-group">
           <label for="">Semestre: </label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="actividad.semestre" required>
         </div>
 
         <div class="form-group">
           <label for="">Descripción: </label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="actividad.descripcion" required>
         </div>
 
         <div style="text-align: center;">
-          <button (click)="Guardar()" class="btn btn-primary" >Guardar actividad</button>
+          <button type="submit" class="btn btn-primary" >Guardar actividad</button>
         </div>
 
 

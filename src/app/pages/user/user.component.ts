@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
 
   onRegistrar(form: NgForm): void{
     console.log(form);
-    if(!form.valid){
+    if(form.valid){
       this.service.registrarActividad(this.actividad)
         .subscribe(data=>{
           alert('¡ Actividad registrada con éxito !');
@@ -28,7 +28,7 @@ export class UserComponent implements OnInit {
         });
 
     }else{
-      console.log('Formulario no valido');
+      alert('Formulario no valido, por favor llene los campos');
     }
   }
 

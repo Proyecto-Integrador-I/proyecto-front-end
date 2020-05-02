@@ -1,5 +1,5 @@
 export class Actividad {
-  codigo: string;
+  codigo: number;
   estado: string;
   curso:  string;
   docente:string;
@@ -7,4 +7,5 @@ export class Actividad {
   duracion: string;
   semestre: string;
   descripcion: string;
+  tipo: string;
 }

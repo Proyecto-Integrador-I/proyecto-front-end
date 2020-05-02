@@ -9,45 +9,44 @@
     <div class="card-body">
       <form #formRegistrar="ngForm" (ngSubmit)="onRegistrar(formRegistrar)">
 
-
-        <div class="form-group">
-          <label for="">Código: </label>
-          <input type="number" class="form-control" [(ngModel)]="actividad.codigo" required>
-        </div>
-
         <div class="form-group">
           <label for="">Estado: </label>
-          <input type="text" class="form-control" [(ngModel)]="actividad.estado" required>
+          <input name="estado" type="text" class="form-control" [(ngModel)]="actividad.estado" required>
         </div>
 
         <div class="form-group">
           <label for="">Curso: </label>
-          <input type="text" class="form-control" [(ngModel)]="actividad.curso" required>
+          <input name="curso" type="text" class="form-control" [(ngModel)]="actividad.curso" required>
         </div>
 
         <div class="form-group">
           <label for="">Docente: </label>
-          <input type="text" class="form-control" [(ngModel)]="actividad.docente" required>
+          <input name="docente" type="text" class="form-control" [(ngModel)]="actividad.docente" required>
         </div>
 
         <div class="form-group">
           <label for="">Fecha: </label>
-          <input type="date" class="form-control" [(ngModel)]="actividad.fecha" required>
+          <input name="fecha" type="date" class="form-control" [(ngModel)]="actividad.fecha" required>
         </div>
 
         <div class="form-group">
           <label for="">Duración: </label>
-          <input type="text" class="form-control" [(ngModel)]="actividad.duracion" required>
+          <input name="duracion" type="text" class="form-control" [(ngModel)]="actividad.duracion" required>
         </div>
 
         <div class="form-group">
           <label for="">Semestre: </label>
-          <input type="text" class="form-control" [(ngModel)]="actividad.semestre" required>
+          <input name="semestre" type="text" class="form-control" [(ngModel)]="actividad.semestre" required>
         </div>
 
         <div class="form-group">
           <label for="">Descripción: </label>
-          <input type="text" class="form-control" [(ngModel)]="actividad.descripcion" required>
+          <input name="descripcion" type="text" class="form-control" [(ngModel)]="actividad.descripcion" required>
+        </div>
+
+        <div class="form-group">
+          <label for="">Tipo: </label>
+          <input name="tipo" type="text" class="form-control" [(ngModel)]="actividad.tipo" required>
         </div>
 
         <div style="text-align: center;">

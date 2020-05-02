@@ -13,13 +13,14 @@ export class TypographyComponent implements OnInit {
   constructor(private service:ActividadService,private router:Router) {}
 
   ngOnInit() {
-    let id = localStorage.getItem('id');
-    if(id == null){
+    const id = localStorage.getItem('id');
+    if(id === '0'){
       this.service.getActividades().subscribe(data => {
         this.actividades = data;
       });
     }else{
       this.listarId(id);
+      localStorage.setItem('id', '0');
     }
 
   }

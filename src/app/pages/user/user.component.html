@@ -12,9 +12,17 @@
       <form #formRegistrar="ngForm" (ngSubmit)="onRegistrar(formRegistrar)">
 
         <div class="form-group">
+          <select name="curso" class="form-control">
+            <option style="background-color: #27293D;" *ngFor = "let cursos of resultadoCursos;" [ngValue]="cursos.nombre">{{cursos.nombre}}</option>
+          </select>
+        </div>
+
+        <!--
+        <div class="form-group">
           <label for="">Curso: </label>
           <input name="curso" type="text" class="form-control" [(ngModel)]="actividad.curso" required>
         </div>
+        -->
 
         <div class="form-group">
           <label for="">Docente: </label>

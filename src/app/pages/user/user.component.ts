@@ -19,7 +19,6 @@ export class UserComponent implements OnInit {
   ngOnInit() {}
 
   onRegistrar(form: NgForm): void{
-    console.log(form);
     if(form.valid){
       this.service.registrarActividad(this.actividad)
         .subscribe(data=>{
@@ -33,9 +32,7 @@ export class UserComponent implements OnInit {
   }
 
   atras(){
-    const idCurso = localStorage.getItem('idCurso');
       this.router.navigate(['actividades']);
-
   }
 
 }

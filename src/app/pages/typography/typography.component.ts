@@ -29,11 +29,15 @@ export class TypographyComponent implements OnInit {
   }
 
   listarId(id:string){
-
     this.service.getActividadId(+id)
       .subscribe(data =>{
         this.actividades = data;
       })
+  }
+
+  editarActividad(actividad: Actividad):void{
+    localStorage.setItem('idActividad', actividad.codigo.toString());
+    this.router.navigate(['editarActividad'])
   }
 
 }

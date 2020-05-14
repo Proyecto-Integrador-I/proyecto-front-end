@@ -14,6 +14,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 
 import { CursoService } from './services/curso.service';
 import { ActividadService } from './services/actividad.service';
+import { EditarActividadComponent } from './pages/editar-actividad/editar-actividad.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { ActividadService } from './services/actividad.service';
     AppRoutingModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, EditarActividadComponent],
   providers: [CursoService, ActividadService],
   bootstrap: [AppComponent]
 })

@@ -49,17 +49,16 @@ export class EditarActividadComponent implements OnInit {
   }
 
   onEditar(form: NgForm): void{
-    /*
     if(form.valid){
-      this.service.registrarActividad(this.actividad)
+      this.serviceActividad.actualizarActividad(this.actividad)
         .subscribe(data=>{
-          alert('¡ Actividad registrada con éxito !');
+          alert('¡ Actividad actualizada con éxito !');
           this.router.navigate(['actividades']);
         });
 
     }else{
       alert('Formulario no valido, por favor llene los campos');
-    } */
+    }
   }
   atras(){
     this.router.navigate(['actividades']);

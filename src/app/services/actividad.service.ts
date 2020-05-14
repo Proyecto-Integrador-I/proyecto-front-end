@@ -23,4 +23,8 @@ export class ActividadService {
   registrarActividad(actividad: Actividad){
     return this.http.post<Actividad>(this.url, actividad);
   }
+
+  actualizarActividad(actividad: Actividad){
+    return this.http.put<Actividad>(this.url, actividad);
+  }
 }

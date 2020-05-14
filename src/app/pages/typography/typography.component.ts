@@ -13,20 +13,19 @@ export class TypographyComponent implements OnInit {
   constructor(private service:ActividadService,private router:Router) {}
 
   ngOnInit() {
-    const id = localStorage.getItem('id');
+    const id = localStorage.getItem('idCurso');
     if(id === '0'){
       this.service.getActividades().subscribe(data => {
         this.actividades = data;
       });
     }else{
       this.listarId(id);
-      localStorage.setItem('id', '0');
     }
 
   }
 
   RegistrarActividad(){
-    this.router.navigate(['registrarActividad']);
+      this.router.navigate(['registrarActividad']);
   }
 
   listarId(id:string){

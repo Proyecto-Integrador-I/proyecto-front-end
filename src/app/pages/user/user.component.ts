@@ -32,4 +32,10 @@ export class UserComponent implements OnInit {
     }
   }
 
+  atras(){
+    const idCurso = localStorage.getItem('idCurso');
+      this.router.navigate(['actividades']);
+
+  }
+
 }

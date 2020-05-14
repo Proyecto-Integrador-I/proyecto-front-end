@@ -13,6 +13,7 @@ export class TablesComponent implements OnInit {
   constructor(private service: CursoService, private router: Router) { }
 
   ngOnInit() {
+    localStorage.setItem('idCurso', '0');
     this.service.getCursos().subscribe(data => {
       this.cursos = data;
     });
@@ -20,7 +21,7 @@ export class TablesComponent implements OnInit {
 
   listarActividad(curso:Curso):void{
     // enviamos el id de la fila seleccionada
-    localStorage.setItem('id', curso.codigo.toString());
+    localStorage.setItem('idCurso', curso.codigo.toString());
     this.router.navigate(['actividades']);
   }
 }

@@ -17,6 +17,8 @@ export class CursoService {
   }
 
   getCursosId(id:string){
+    console.log(this.url + '/' + id);
     return this.http.get<Curso[]>(this.url + '/' + id);
+
   }
 }

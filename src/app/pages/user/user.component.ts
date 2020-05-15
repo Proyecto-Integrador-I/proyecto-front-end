@@ -15,6 +15,8 @@ declare var $:any;
 export class UserComponent implements OnInit {
   actividad: Actividad = new Actividad();
   resultadoCursos: Curso[];
+  id: string;
+  tipos: string[] = ['Grupal', 'Asesoría', 'Clase', 'Examen', 'Laboratorio', 'Salida', 'Otro'];
 
   constructor(private router:Router, private serviceActividad:ActividadService, private serviceCurso: CursoService) {}
 
@@ -24,9 +26,8 @@ export class UserComponent implements OnInit {
     this.setearCampos();
   }
   setearCampos(){
-    const id = localStorage.getItem('idCurso');
-    console.log(id);
-    if(id === '0'){
+     this.id = localStorage.getItem('idCurso');
+    if(this.id === '0'){
       $('select').material_select('destroy');
       this.serviceCurso.getCursos()
         .subscribe(data =>{
@@ -34,15 +35,16 @@ export class UserComponent implements OnInit {
           }
         );
     }else{
-      /*
       $('select').material_select('destroy');
-      this.serviceCurso.getCursosId(id)
+      this.serviceCurso.getCursos()
         .subscribe(data =>{
             this.resultadoCursos = data;
+
           }
         );
-       */
-      this.serviceActividad.getActividadId(+id)
+
+
+      this.serviceActividad.getActividadId(+this.id)
         .subscribe(data =>{
           this.actividad = data[0];
         })
@@ -51,6 +53,8 @@ export class UserComponent implements OnInit {
 
   onRegistrar(form: NgForm): void{
     if(form.valid){
+      this.actividad.curso = this.id.split('-')[0].trim();
+      this.actividad.docente = this.actividad.docente.split('-')[0].trim();
       this.serviceActividad.registrarActividad(this.actividad)
         .subscribe(data=>{
           alert('¡ Actividad registrada con éxito !');

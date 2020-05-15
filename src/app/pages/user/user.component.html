@@ -10,22 +10,15 @@
 
     <div class="card-body">
       <form #formRegistrar="ngForm" (ngSubmit)="onRegistrar(formRegistrar)">
-
         <div class="form-group">
-          <select name="curso" class="form-control">
-            <option style="background-color: #27293D;" *ngFor = "let cursos of resultadoCursos;" [ngValue]="cursos.nombre">{{cursos.nombre}}</option>
+          <label>Seleccione el curso</label>
+          <select class="form-control" name="curso" [(ngModel)]="id">
+            <option style="background-color: #27293D;" *ngFor="let curso of resultadoCursos" [selected]="id == curso.codigo" >{{curso.codigo + ' - ' + curso.nombre}}</option>
           </select>
         </div>
 
-        <!--
         <div class="form-group">
-          <label for="">Curso: </label>
-          <input name="curso" type="text" class="form-control" [(ngModel)]="actividad.curso" required>
-        </div>
-        -->
-
-        <div class="form-group">
-          <label for="">Docente: </label>
+          <label for="">Docente (cédula): </label>
           <input name="docente" type="text" class="form-control" [(ngModel)]="actividad.docente" required>
         </div>
 
@@ -49,10 +42,10 @@
           <input name="descripcion" type="text" class="form-control" [(ngModel)]="actividad.descripcion" required>
         </div>
 
-        <div class="form-group">
-          <label for="">Tipo: </label>
-          <input name="tipo" type="text" class="form-control" [(ngModel)]="actividad.tipo" required>
-        </div>
+        <label>Seleccione el tipo: </label>
+        <select class="form-control" name="tipo" [(ngModel)]="id">
+          <option style="background-color: #27293D;" *ngFor="let tipo of tipos" >{{tipo}}</option>
+        </select>
 
         <div style="text-align: center;">
           <button type="submit" class="btn btn-primary" >Guardar actividad</button>

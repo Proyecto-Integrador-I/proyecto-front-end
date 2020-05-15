@@ -17,7 +17,7 @@ export class ActividadService {
   }
 
   getActividadId(id:number){
-    return this.http.get<Actividad[]>(this.url + '/' + id);
+    return this.http.get<Actividad[]>(this.url + '/curso/' + id);
   }
 
   registrarActividad(actividad: Actividad){
@@ -26,5 +26,9 @@ export class ActividadService {
 
   actualizarActividad(actividad: Actividad){
     return this.http.put<Actividad>(this.url, actividad);
+  }
+
+   eliminarActividad(actividad: Actividad){
+    return this.http.delete<Actividad>(this.url + '/' + actividad.codigo);
   }
 }

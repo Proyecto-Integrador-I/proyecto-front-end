@@ -1,11 +1,11 @@
 export class Actividad {
   codigo: number;
-  estado: string;
-  curso:  string;
-  docente:string;
-  fecha: string;
-  duracion: string;
   semestre: string;
+  duracion: string;
+  fecha: string;
   descripcion: string;
   tipo: string;
+  estado: string;
+  docente:string;
+  curso:  string;
 }

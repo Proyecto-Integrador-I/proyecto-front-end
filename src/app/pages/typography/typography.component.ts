@@ -40,4 +40,17 @@ export class TypographyComponent implements OnInit {
     this.router.navigate(['editarActividad'])
   }
 
+  eliminarActividad(actividad){
+    const respuesta = confirm('¿ Está seguro que desea eliminar la actividad ?');
+    if(respuesta === true){
+      this.service.eliminarActividad(actividad)
+        .subscribe(data =>{
+          this.actividades = this.actividades.filter(a=> a!== actividad);
+          alert('Actividad Eliminada ...');
+        })
+      return true;
+    }else{
+      return false;
+    }
+  }
 }

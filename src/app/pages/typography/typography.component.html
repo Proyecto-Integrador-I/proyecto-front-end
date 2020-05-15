@@ -1,3 +1,16 @@
+<script>
+  function confirmarEliminacion() {
+    var respuesta = confirm("Estas seguro que deseas eliminar el usuario");
+    if(respuesta == true){
+      return true;
+    }else{
+      return false;
+    }
+
+  }
+</script>
+
+
 <div class=" content">
   <div class="container">
     <div class="card">
@@ -38,8 +51,8 @@
             <td>{{actividad.semestre}}</td>
             <td>{{actividad.descripcion}}</td>
             <td>
-              <button (click)="editarActividad(actividad)" class="btn btn-info">Editar</button>
-              <button class="btn btn-danger" style="margin-left: 20px;">Eliminar</button>
+              <button (click)="editarActividad(actividad)"   style="margin-left: 20px; border: 0; background: none;"> <img title="Editar actividad" src="https://img.icons8.com/officel/40/000000/edit.png"/></button>
+              <button (click)="eliminarActividad(actividad)" style="margin-left: 20px; border: 0; background: none;" ><img title="Borrar actividad" src="https://img.icons8.com/color/40/000000/delete-forever.png"/></button>
             </td>
           </tr>
           </tbody>

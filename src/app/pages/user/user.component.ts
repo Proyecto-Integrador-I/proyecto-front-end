@@ -53,7 +53,7 @@ export class UserComponent implements OnInit {
 
   onRegistrar(form: NgForm): void{
     if(form.valid){
-      this.actividad.curso = this.id.split('-')[0].trim();
+      //this.actividad.curso = this.id.split('-')[0].trim();
       this.actividad.docente = this.actividad.docente.split('-')[0].trim();
       this.serviceActividad.registrarActividad(this.actividad)
         .subscribe(data=>{

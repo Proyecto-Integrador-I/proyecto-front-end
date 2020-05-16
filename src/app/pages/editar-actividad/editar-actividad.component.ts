@@ -14,10 +14,10 @@ declare var $:any;
   styleUrls: ['./editar-actividad.component.scss']
 })
 export class EditarActividadComponent implements OnInit {
-  actividad: Actividad= new Actividad();
+  actividad: Actividad = new Actividad();
   resultadoCursos: Curso[];
   fecha: string;
-  id: string;
+  idCurso: string;
 
   constructor(private router:Router, private serviceActividad:ActividadService, private serviceCurso: CursoService) { }
 
@@ -25,7 +25,7 @@ export class EditarActividadComponent implements OnInit {
      this.setearCampos();
   }
   setearCampos(){
-    this.id = localStorage.getItem('idActividad');
+    const idActividad = localStorage.getItem('idActividad');
     let arregloDeSubCadenas, dia, mes, anio;
       $('select').material_select('destroy');
       this.serviceCurso.getCursos()
@@ -33,9 +33,10 @@ export class EditarActividadComponent implements OnInit {
               this.resultadoCursos = data;
           }
         );
-      this.serviceActividad.getActividadId(+this.id)
+      this.serviceActividad.getActividadId(+idActividad)
       .subscribe(data =>{
-        this.actividad = data[0];
+        this.actividad = data;
+        this.idCurso = this.actividad.curso.split('-')[0].trim();
         arregloDeSubCadenas = this.actividad.fecha.split('/')
         dia = arregloDeSubCadenas[0];
         mes = arregloDeSubCadenas[1];
@@ -50,7 +51,7 @@ export class EditarActividadComponent implements OnInit {
 
   onEditar(form: NgForm): void{
     if(form.valid){
-      this.actividad.curso = this.id.split('-')[0].trim();
+      this.actividad.curso = this.idCurso.split('-')[0].trim();
       this.actividad.docente = this.actividad.docente.split('-')[0].trim();
       this.serviceActividad.actualizarActividad(this.actividad)
         .subscribe(data=>{

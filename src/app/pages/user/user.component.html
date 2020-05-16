@@ -12,8 +12,8 @@
       <form #formRegistrar="ngForm" (ngSubmit)="onRegistrar(formRegistrar)">
         <div class="form-group">
           <label>Seleccione el curso</label>
-          <select class="form-control" name="curso" [(ngModel)]="id">
-            <option style="background-color: #27293D;" *ngFor="let curso of resultadoCursos" [selected]="id == curso.codigo" >{{curso.codigo + ' - ' + curso.nombre}}</option>
+          <select class="form-control" name="curso" [(ngModel)]="actividad.curso">
+            <option style="background-color: #27293D;" *ngFor="let curso of resultadoCursos" [ngValue]="curso.codigo">{{curso.codigo + ' - ' + curso.nombre}}</option>
           </select>
         </div>
 
@@ -43,7 +43,7 @@
         </div>
 
         <label>Seleccione el tipo: </label>
-        <select class="form-control" name="tipo" [(ngModel)]="id">
+        <select class="form-control" name="tipo" [(ngModel)]="actividad.tipo">
           <option style="background-color: #27293D;" *ngFor="let tipo of tipos" >{{tipo}}</option>
         </select>
 

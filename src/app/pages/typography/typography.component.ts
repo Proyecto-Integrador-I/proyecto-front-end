@@ -29,7 +29,7 @@ export class TypographyComponent implements OnInit {
   }
 
   listarId(id:string){
-    this.service.getActividadId(+id)
+    this.service.getActividadesCursoId(+id)
       .subscribe(data =>{
         this.actividades = data;
       })

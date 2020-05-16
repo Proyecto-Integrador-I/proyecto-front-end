@@ -17,7 +17,6 @@ export class ActividadService {
   }
 
   getActividadesCursoId(id:number){
-    console.log(id);
     return this.http.get<Actividad[]>(this.url + '/curso/' + id);
   }
 
